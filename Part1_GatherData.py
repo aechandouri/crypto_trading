@@ -12,8 +12,8 @@ coins = ['BTC','ETH','LTC']
 merge = False
 for coin in coins:
     print(f'gathering {coin}...')
-    start_str = 'Jan 27, 2021'
-    end_str = 'Jul 21, 2021'
+    start_str = 'Jan 27, 2022'
+    end_str = 'Mar 21, 2022'
 
     klines = client.get_historical_klines(symbol=f'{coin}USDT', 
                                           interval=client.KLINE_INTERVAL_1MINUTE, 
@@ -58,4 +58,4 @@ fig = go.Figure(data=[go.Candlestick(x=all_coins_df['OpenTime'],
 fig.update_layout(xaxis_rangeslider_visible=False)
 fig.show()
 
-all_coins_df.to_csv('BTC_ETH_LTC_Jan2721_Jul2121_1h.csv',index=False)
+all_coins_df.to_csv('BTC_ETH_LTC_Jan2721_Mar2121_1h.csv',index=False)
