@@ -1,7 +1,7 @@
 import pandas as pd
 from plot_utils import plot_results
 
-df = pd.read_csv('BTC_ETH_LTC_Jan2721_Jul2121_1h.csv')
+df = pd.read_csv('BTC_ETH_LTC_Jan2721_Mar2121_1h.csv')
 
 def sma(data, window):
     return(data.rolling(window = window).mean())
@@ -56,7 +56,7 @@ class TradingEnv:
         for symbol in self.symbols:
             self.tops[symbol] = 'none'
 
-# VIP level 0, paying fees with BNB = 0.075%
+# VIP level 0, fees with BNB = 0.075%
 env = TradingEnv(balance_amount=100,balance_unit='USDT', trading_fee_multiplier=0.99925, symbols=symbols)
 
 for i in range(len(df)):
