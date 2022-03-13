@@ -1,7 +1,7 @@
 import pandas as pd
 from plot_utils import plot_results
 
-df = pd.read_csv('BTC_ETH_LTC_Jan2721_Jul2121_1h.csv')
+df = pd.read_csv('BTC_ETH_LTC_Jan2721_Mar2121_1h.csv')
 
 def sma(data, window):
     return(data.rolling(window = window).mean())
